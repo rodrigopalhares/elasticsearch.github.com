@@ -66,7 +66,7 @@ p. The @scroll@ parameter control the keep alive time of the scrolling request a
 p. The response will include no hits, with two important results, the @total_hits@ will include the total hits that match the query, and the @scroll_id@ that allows to start the scroll process. From this stage, the @_search/scroll@ endpoint should be used to scroll the hits, feeding the next scroll request with the previous search result @scroll_id@. For example:
 
 <pre class="prettyprint">
-curl -XGET 'localhost:9200/_search/scroll?scroll=10m' -d 'c2NhbjsxOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7MzowSzM3aVhLalNiMmR5ZlVET3hSTmZ3OzU6MEszN2lYS2pTYjJkeWZVRE94Uk5mdzsyOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7NDowSzM3aVhLalNiMmR5ZlVET3hSTmZ3Ow=='
+curl -XGET 'localhost:9200/_search/scroll?scroll=10m&scroll_id=c2NhbjsxOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7MzowSzM3aVhLalNiMmR5ZlVET3hSTmZ3OzU6MEszN2lYS2pTYjJkeWZVRE94Uk5mdzsyOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7NDowSzM3aVhLalNiMmR5ZlVET3hSTmZ3Ow=='
 </pre>
 
 p. Scroll requests will include a number of hits equal to the size multiplied by the number of primary shards.
